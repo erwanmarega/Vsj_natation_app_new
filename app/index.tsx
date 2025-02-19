@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+import "../global.css"
+
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
@@ -16,135 +18,49 @@ const LoginScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.containerTitle}>
-        <Text style={styles.title}>{isLogin ? 'Se connecter' : 'S\'inscrire'}</Text>
-        <Text style={styles.subtitle}>Bienvenue chez VSJ Natation !</Text>
+    <View className="flex-1 justify-center items-center bg-white p-5">
+      <View className="items-center mb-5">
+        <Text className="text-2xl font-bold">{isLogin ? 'Se connecter' : 'S\'inscrire'}</Text>
+        <Text className="text-gray-500 text-lg">Bienvenue chez VSJ Natation !</Text>
       </View>
 
-      <View style={styles.tabContainer}>
-        <TouchableOpacity onPress={() => setIsLogin(true)} style={[styles.tab, isLogin && styles.activeTab]}>
-          <Text style={isLogin ? styles.activeTabText : styles.tabText}>Se connecter</Text>
+      <View className="flex-row mb-5 border-b border-gray-300">
+        <TouchableOpacity onPress={() => setIsLogin(true)} className={`p-2 ${isLogin ? 'border-b-2 border-blue-500' : ''}`}>
+          <Text className={isLogin ? 'text-blue-500 font-bold' : 'text-gray-500 font-bold'}>Se connecter</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => setIsLogin(false)} style={[styles.tab, !isLogin && styles.activeTab]}>
-          <Text style={!isLogin ? styles.activeTabText : styles.tabText}>S'inscrire</Text>
+        <TouchableOpacity onPress={() => setIsLogin(false)} className={`p-2 ${!isLogin ? 'border-b-2 border-blue-500' : ''}`}>
+          <Text className={!isLogin ? 'text-blue-500 font-bold' : 'text-gray-500 font-bold'}>S'inscrire</Text>
         </TouchableOpacity>
       </View>
       
-      <Text style={styles.label}>Email</Text>
+      <Text className="self-start text-sm font-bold mb-1">Email</Text>
       <TextInput
-        style={styles.input}
+        className="w-full h-12 border border-gray-300 rounded-lg px-3 mb-4"
         placeholder="vsjnatation@gmail.com"
         keyboardType="email-address"
         value={email}
         onChangeText={setEmail}
       />
       
-      <Text style={styles.label}>Mot de passe</Text>
+      <Text className="self-start text-sm font-bold mb-1">Mot de passe</Text>
       <TextInput
-        style={styles.input}
+        className="w-full h-12 border border-gray-300 rounded-lg px-3 mb-4"
         placeholder="••••••••••"
         secureTextEntry
         value={password}
         onChangeText={setPassword}
       />
       
-      <TouchableOpacity style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>{isLogin ? 'Se connecter' : 'S\'inscrire'}</Text>
+      <TouchableOpacity className="w-full bg-blue-500 py-3 rounded-lg items-center mb-3" onPress={handleLogin}>
+        <Text className="text-white font-bold">{isLogin ? 'Se connecter' : 'S\'inscrire'}</Text>
       </TouchableOpacity>
       
-      <TouchableOpacity style={styles.googleButton} onPress={handleGoogleLogin}>
+      <TouchableOpacity className="flex-row items-center border border-gray-300 py-3 rounded-lg w-full justify-center" onPress={handleGoogleLogin}>
         <AntDesign name="google" size={20} color="#DB4437" />
-        <Text style={styles.googleText}> Se connecter avec Google</Text>
+        <Text className="ml-2 font-bold"> Se connecter avec Google</Text>
       </TouchableOpacity>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    padding: 20,
-  },
-  containerTitle: {
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  tabContainer: {
-    flexDirection: 'row',
-    marginBottom: 20,
-  },
-  tab: {
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderBottomWidth: 2,
-    borderBottomColor: 'transparent',
-  },
-  activeTab: {
-    borderBottomColor: '#3B82F6',
-  },
-  tabText: {
-    color: 'gray',
-    fontWeight: 'bold',
-  },
-  activeTabText: {
-    color: '#3B82F6',
-    fontWeight: 'bold',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 5,
-  },
-  subtitle: {
-    fontSize: 16,
-    color: 'gray',
-    marginBottom: 20,
-  },
-  label: {
-    alignSelf: 'flex-start',
-    fontSize: 14,
-    fontWeight: 'bold',
-    marginBottom: 5,
-  },
-  input: {
-    width: '100%',
-    height: 50,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 8,
-    paddingLeft: 10,
-    marginBottom: 15,
-  },
-  button: {
-    backgroundColor: '#3B82F6',
-    padding: 15,
-    borderRadius: 8,
-    width: '100%',
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  buttonText: {
-    color: '#fff',
-    fontWeight: 'bold',
-  },
-  googleButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#ccc',
-    padding: 15,
-    borderRadius: 8,
-    width: '100%',
-    justifyContent: 'center',
-  },
-  googleText: {
-    marginLeft: 10,
-    fontWeight: 'bold',
-  },
-});
 
 export default LoginScreen;
