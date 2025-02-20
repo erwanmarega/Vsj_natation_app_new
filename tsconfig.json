@@ -4,14 +4,12 @@
     "allowJs": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "lib": [
-      "esnext"
-    ],
+    "lib": ["esnext"],
     "moduleResolution": "node",
     "skipLibCheck": true,
     "noEmit": true,
     "resolveJsonModule": true,
-    "strict": true
+    "strict": true,
   },
   "extends": "expo/tsconfig.base",
   "include": [
