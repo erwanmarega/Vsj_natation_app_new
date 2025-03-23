@@ -1,29 +1,121 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
+import { useRouter, usePathname } from "expo-router";
 
 const Navbar = () => {
   const router = useRouter();
+  const pathname = usePathname();
+  const [pressedIcon, setPressedIcon] = useState<string | null>(null);
+
+  const routes = {
+    dashboard: "/dashboard",
+    calendar: "/calendar",
+    messages: "/MessageScreen",
+    cube: "/dashboard",
+    profil: "/profil",
+  } as const;
+
+  const isActive = (route: typeof routes[keyof typeof routes]) => pathname === route;
 
   return (
     <View style={styles.navbar}>
-      <TouchableOpacity onPress={() => router.push("/")}> 
-        <Ionicons name="grid-outline" size={24} color="gray" />
+      <TouchableOpacity
+        onPress={() => router.push(routes.dashboard)}
+        onPressIn={() => setPressedIcon("dashboard")}
+        onPressOut={() => setPressedIcon(null)}
+        activeOpacity={0.7}
+      >
+        <Ionicons
+          name="grid-outline"
+          size={24}
+          color={
+            pressedIcon === "dashboard"
+              ? "#60A5FA"
+              : isActive(routes.dashboard)
+              ? "#3B82F6"
+              : "gray"
+          }
+        />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => router.push("/calendar")}> 
-        <Ionicons name="calendar-outline" size={24} color="gray" />
+
+      <TouchableOpacity
+        onPress={() => router.push(routes.calendar)}
+        onPressIn={() => setPressedIcon("calendar")}
+        onPressOut={() => setPressedIcon(null)}
+        activeOpacity={0.7}
+      >
+        <Ionicons
+          name="calendar-outline"
+          size={24}
+          color={
+            pressedIcon === "calendar"
+              ? "#60A5FA"
+              : isActive(routes.calendar)
+              ? "#3B82F6"
+              : "gray"
+          }
+        />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => router.push("/message")}> 
-        <Ionicons name="chatbubble-outline" size={24} color="green" />
+
+      <TouchableOpacity
+        onPress={() => router.push(routes.messages)}
+        onPressIn={() => setPressedIcon("messages")}
+        onPressOut={() => setPressedIcon(null)}
+        activeOpacity={0.7}
+      >
+        <Ionicons
+          name="chatbubble-outline"
+          size={24}
+          color={
+            pressedIcon === "messages"
+              ? "#60A5FA"
+              : isActive(routes.messages)
+              ? "#3B82F6"
+              : "gray"
+          }
+        />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => router.push("/")}> 
-        <Ionicons name="cube-outline" size={24} color="gray" />
+
+      <TouchableOpacity
+        onPress={() => router.push(routes.cube)}
+        onPressIn={() => setPressedIcon("cube")}
+        onPressOut={() => setPressedIcon(null)}
+        activeOpacity={0.7}
+      >
+        <Ionicons
+          name="cube-outline"
+          size={24}
+          color={
+            pressedIcon === "cube"
+              ? "#60A5FA"
+              : isActive(routes.cube)
+              ? "#3B82F6"
+              : "gray"
+          }
+        />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => router.push("/")}> 
+
+      <TouchableOpacity
+        onPress={() => router.push(routes.profil)}
+        onPressIn={() => setPressedIcon("profil")}
+        onPressOut={() => setPressedIcon(null)}
+        activeOpacity={0.7}
+      >
         <Image
-          source={{ uri: "https://randomuser.me/api/portraits/men/45.jpg" }}
-          style={styles.navAvatar}
+          source={require("../assets/images/Logo_3D.png")}
+          style={[
+            styles.navAvatar,
+            {
+              borderColor:
+                pressedIcon === "profil"
+                  ? "#60A5FA"
+                  : isActive(routes.profil)
+                  ? "#3B82F6"
+                  : "transparent",
+              borderWidth: 2,
+            },
+          ]}
         />
       </TouchableOpacity>
     </View>
@@ -44,6 +136,10 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 8,
     elevation: 3,
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
   },
   navAvatar: {
     width: 32,
