@@ -508,7 +508,6 @@ const styles = StyleSheet.create({
     opacity: 0.8,
     padding: 20,
   },
-  // Styles pour le Modal
   modalOverlay: {
     flex: 1,
     backgroundColor: "rgba(0, 0, 0, 0.5)",
