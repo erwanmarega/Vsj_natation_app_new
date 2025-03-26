@@ -12,7 +12,7 @@ const Navbar = () => {
     dashboard: "/dashboard",
     calendar: "/calendar",
     messages: "/MessageScreen",
-    cube: "/dashboard",
+    cube: "/qrcode",
     profil: "/profil",
   } as const;
 

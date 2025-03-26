@@ -31,7 +31,8 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      "expo-barcode-scanner"
     ],
     "experiments": {
       "typedRoutes": true
@@ -39,7 +40,7 @@
     "reactNativeExperimentalFeatures": {
       "newArchEnabled": true
     },
-   "extra": {
+    "extra": {
       "EXPO_PUBLIC_API_URL": "http://127.0.0.1:8000"
     }
   }
