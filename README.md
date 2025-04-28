@@ -7,12 +7,12 @@ VSJ_Natation est une application mobile développée avec React Native pour les 
 Suivi des entraînements : Enregistrez vos sessions avec la distance, le temps et le style de nage.
 Statistiques : Visualisez vos progrès avec des graphiques clairs.
 Planification : Créez des programmes d'entraînement personnalisés.
-Mode hors-ligne : Utilisez l'app même sans connexion à la piscine.
-Partage : Publiez vos performances et motivez vos amis nageurs.
+Messagerie : Palez avec des personnes du même groupe que vous. 
 
 ## Démo
 
 Regardez une démo complète sur YouTube.
+https://youtube.com/shorts/ecCsQumX5DE
 
 ## Installation
 
