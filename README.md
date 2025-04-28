@@ -1,50 +1,70 @@
-# Welcome to your Expo app 👋
+## VSJ_Natation 🏊‍♂️
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+VSJ_Natation est une application mobile développée avec React Native pour les nageurs et entraîneurs. Suivez vos entraînements, analysez vos performances et planifiez vos sessions pour nager plus vite et plus loin !
 
-## Get started
+## Fonctionnalités
 
-1. Install dependencies
+Suivi des entraînements : Enregistrez vos sessions avec la distance, le temps et le style de nage.
+Statistiques : Visualisez vos progrès avec des graphiques clairs.
+Planification : Créez des programmes d'entraînement personnalisés.
+Mode hors-ligne : Utilisez l'app même sans connexion à la piscine.
+Partage : Publiez vos performances et motivez vos amis nageurs.
 
-   ```bash
-   npm install
-   ```
+## Démo
 
-2. Start the app
+Regardez une démo complète sur YouTube.
 
-   ```bash
-    npx expo start
-   ```
+## Installation
 
-In the output, you'll find options to open the app in a
+## Prérequis
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Node.js (version 16+)
+Expo CLI
+Émulateur iOS/Android ou application Expo Go
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Étapes
 
-## Get a fresh project
+Clonez le dépôt :
+git clone https://github.com/erwanmarega/vsj_natation.git
+cd vsj_natation
 
-When you're ready, run:
 
-```bash
-npm run reset-project
-```
+Installez les dépendances :
+npm install
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
-## Learn more
+Lancez l'application :
+expo start
 
-To learn more about developing your project with Expo, look at the following resources:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Scannez le QR code avec Expo Go ou utilisez un émulateur.
 
-## Join the community
 
-Join our community of developers creating universal apps.
+## Technologies
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+React Native : Développement mobile multiplateforme.
+Expo : Simplification du développement et déploiement.
+JavaScript : Logique principale.
+AsyncStorage : Stockage local.
+React Navigation : Navigation entre écrans.
+Chart.js : Graphiques de performance.
+
+## Contribuer
+Envie de participer ? Voici comment :
+
+Forkez le dépôt.
+Créez une branche (git checkout -b feature/nouvelle-fonction).
+Commitez vos changements (git commit -m "Ajout de X").
+Poussez la branche (git push origin feature/nouvelle-fonction).
+Ouvrez une Pull Request.
+
+Consultez le guide de contribution.
+## Licence
+Ce projet est sous licence MIT.
+
+## Contact
+
+Auteur : Erwan Marega
+Email : maregaerwan@gmail.com
+Portfolio : erwanmarega.github.io
+
